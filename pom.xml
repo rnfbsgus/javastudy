@@ -31,6 +31,16 @@
 	
 	<modules>
 	   <module>chapter03</module>
+	   <module>pratice01</module>
+	   <module>pratice02</module>
+	   <module>pratice03</module>
+	   <module>chaper04</module>
+	   <module>Chapter3</module>
+	   <module>finaltest</module>
+	   <module>pratice04</module>
+	   <module>pratice05</module>
+	   <module>chaper03</module>
+	   <module>network</module>
 	</modules>
 
 </project>
