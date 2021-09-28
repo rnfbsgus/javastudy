@@ -1,13 +1,12 @@
 package chapter03;
 
 public class GoodsApp {
-
-	public  static void main(String[] args) {
+	public static void main(String[] args) {
 		Goods goods = new Goods();
 		goods.setName("Nikon");
 		goods.setPrice(2000);
-		goods.setCountSold(20);
 		goods.setCountStock(10);
+		goods.setCountSold(20);
 		goods.showInfo();
 		
 		goods.setPrice(-1);
@@ -18,8 +17,7 @@ public class GoodsApp {
 		
 		Goods goods2 = new Goods();
 		Goods goods3 = new Goods();
-	
-	    System.out.println(Goods.countOfGoods);
+		
+		System.out.println(Goods.countOfGoods);
 	}
-
 }

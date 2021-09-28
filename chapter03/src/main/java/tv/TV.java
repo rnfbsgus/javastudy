@@ -1,8 +1,8 @@
 package tv;
 
 public class TV {
-	private int channel; // 1~255
-	private int volume; // 0~100
+	private int channel;    // 1~255 
+	private int volume;     // 0~100
 	private boolean power;
 	
 	public TV(int channel, int volume, boolean power) {
@@ -12,72 +12,55 @@ public class TV {
 	}
 	
 	public void power(boolean on) {
-		if(on) {
-			this.power = on;
-			System.out.println("Power On");
-		}
-		else {
-			this.power = on;
-			System.out.println("Power Off");
-		}
-	}
-	
-	public void channel(int channel) {
-		if(channel >= 1 && channel <= 255 ) {
-			this.channel = channel;
-		}
-		else {
-			System.out.println("없는채널입니다.");
-		}
+		power = on;
 	}
 	
 	public void channel(boolean up) {
-		//channel (channel + (up ? :           삼항연산자
-		if(up){
-			if(this.channel == 255) {
-			     this.channel = 1;
-			}
-			else {
-				this.channel += 1;
-			}
+		// channel(channel + (up ? 1 : -1));
+		if(up) {
+			channel(channel + 1);
+		} else {
+			channel(channel - 1);
 		}
-		else {
-			if(this.channel == 1) {
-			     this.channel = 255;
-			}
-			else {
-				this.channel -= 1;
-			}
+	}
+
+	public void channel(int channel) {
+		if(!power) {
+			return;
 		}
 		
-	   
-	}
-	
-	public void volume(int volume) {
-		if(volume >= 0 && volume <= 100) {
-			this.volume = volume;
+		if(channel < 1) {
+			channel = 255;
+		} else if(channel > 255){
+			channel = 1;
 		}
-		else {
-			System.out.println("볼륨은 0에서  100까지 설정 가능 합니다. ");
-		}
+		
+		this.channel = channel;
 	}
 	
 	public void volume(boolean up) {
-		if(up) {
-			if(this.volume < 100) {
-				this.volume += 1;
-			}
-		}
-		else {
-			if(this.volume > 0) {
-				this.volume -= 1;
-			}
-		}
+		volume(volume + (up ? 1 : -1));
 	}
-	
+
+	public void volume(int volume) {
+		if(!power) {
+			return;
+		}
+		
+		if(volume < 0) {
+			volume = 100;
+		} else if(volume > 100){
+			volume = 0;
+		}
+		
+		this.volume = volume;
+	}
+
 	public void status() {
-	       System.out.println("TV [channel=" + channel + ", volume=" + volume + ", power=" + power + "]");
+		System.out.println(
+			"TV[power=" + (power ? "on" : "off") + ", " + 
+			"channel=" + channel + ", " +
+			"volume=" + volume + "]");
 	}
-	
 	
 }

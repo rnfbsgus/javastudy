@@ -8,17 +8,15 @@ public class SwapTest02 {
 		
 		System.out.println(a + ":" + b);
 		
-		/*swap 하기*/
-		swap(a,b);
+		swap(a, b);
 		
-		System.out.println(a + ":" + b);
-
+		System.out.println(a + ":" + b);		
 	}
 	
 	public static void swap(int p, int q) {
 		int temp = p;
 		p = q;
-		q = temp;
+		q = temp;		
 	}
 
 }
