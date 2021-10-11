@@ -35,4 +35,3 @@ public class ChatClientRecieveThread extends Thread {
 
 
 }
-//메세지를 받아서 채팅 메세지인지 부터 = MESSAGE 
